@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Lista De Mangás</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet" />
+
+<link href="/css/non-responsive.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="/css/estilo.css" rel="stylesheet" />
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+	
+	<div style="height:50px;">
+		<a href="cadastro"><button style="background: #00b900; border-radius: 4px; padding: 10px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Cadastrar Novo Mangá</button></a>
+	</div>
+	<div id="wrapper">
+						
+			<h1>Lista de Mangás</h1>
+		
+		
+		<table id="keywords" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th><span>Id</span></th>
+					<th><span>Titulo</span></th>
+					<th><span>Autor</span></th>
+					<th><span>Quantidade</span></th>
+					<th><span>Preço</span></th>
+					<th><span>Ações</span></th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="livro: ${livros}">
+					<td th:text="${livro.Id}">Id</td>
+					<td class="lalign" th:text="${livro.titulo}">Titulo</td>
+					<td class="lalign" th:text="${livro.autor}">Autor</td>
+					<td th:text="${livro.quantidade}">Quantidade</td>
+					<td th:text="${livro.preco}">Preco</td>
+					<td>
+						<a th:href="@{'/editar/'+ ${livro.id}}" class="button green"><span><i class="fa fa-edit"></i></span></a>
+						
+						<a th:href="@{'/deletar/'+ ${livro.id}}" class="button red"><span><i class="fa fa-trash"></i></span></a>
+					</td>
+					<td>
+						
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

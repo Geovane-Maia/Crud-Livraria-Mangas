@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Editar livro</title>
+
+<!-- Custom styles for this template -->
+<link href="/css/estilo-cadastro.css" rel="stylesheet" />
+</head>
+<body>
+
+	<form action="#"  th:action="@{/salvar}" th:object="${livro}" method="post">
+		
+		<h1>Alterar Cadastro de  Livro</h1>
+		
+		<label> Id: </label> <br> <input type="text" th:field="*{id}"placeholder="" readonly="readonly" /><br>
+		<label> Título: </label> <br> <input type="text" th:field="*{titulo}"placeholder="" /><br>
+		<label> Autor: </label> </br> <input type="text" th:field="*{autor}"placeholder="" /><br>
+		<label> Quantidade: </label> </br> <input type="text" th:field="*{quantidade}" placeholder="" /> <br>
+		<label> Preço: </label> </br> <input type="text" th:field="*{preco}" placeholder="" /> <br>
+		<button type="submit">Submit</button> <a href="/" class="button">cancelar</a>
+		
+	</form>
+
+</body>
+</html>
